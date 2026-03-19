@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaizen AI</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+    <body>
+
+    <!-- ===================== Header ===================== -->
+    <header class="site-header">
+
+        <div class="header-brand">
+        <div class="brand-icon">
+            <span class="material-symbols-outlined">auto_awesome</span>
+        </div>
+        <div class="brand-info">
+            <div class="brand-name-row">
+            <h1 class="brand-name">Kaizen</h1>
+            <span class="status-dot" aria-label="Online"></span>
+            </div>
+            <span class="brand-status">Always online</span>
+        </div>
+        </div>
+        
+        <!--
+        <nav class="header-actions" aria-label="Header actions">
+        <button class="icon-btn" title="Clear Chat" type="button" aria-label="Clear chat">
+            <span class="material-symbols-outlined" aria-hidden="true">delete_sweep</span>
+        </button>
+        <button class="icon-btn" title="Settings" type="button" aria-label="Settings">
+            <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+        </button>
+        <div class="avatar">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAS53Cf__ltKNdN0f3njRhaLiKyQL6xLLuYnx3aZyfmNyoN6yOKxyI_0I-yi8202PwFS4f4GXxBGkQxsSukGDrxNsqoDKg2Xzx0bzulPeprIFLu5fUKTCvT5SzhpSh950OVWAU7xjzQ_d3OBg9ixeQZ86Nx2bko48JpXVJcPuKUI_hjbI_kbv7TUSCnfaWCHR3zgvFE8dahVSI326R_wALi-tE8gNbV1tJGkxDywMPuBwOsUt2862tlyVrVzwGeqaXeJq64FXPqgY"
+                alt="User profile avatar" />
+        </div>
+        </nav>
+        -->
+
+    </header>
+
+    <!-- ===================== Chat ===================== -->
+    <main class="chat-main" aria-label="Chat messages" id="chatBox">
+
+        <!-- Bot: Introduction -->
+        <article class="message message--bot">
+            <div class="message-avatar" aria-hidden="true">
+            <span class="material-symbols-outlined">smart_toy</span>
+            </div>
+
+            <div class="message-content">
+            <div class="message-meta">
+                <span class="message-author">Kaizen</span>
+                <span class="message-tag">AI Chatbot</span>
+            </div>
+
+            <p class="message-bubble">
+                Hi! I'm <strong>Kaizen</strong>, your guide to the Senior High School experience of 
+                <strong>Luke Joseph Renacido</strong> at <strong>Jesus Reigns Christian Academy (JRCA)</strong>.
+                <!--
+                <br><br>
+                You can ask me about:
+                <br>• Luke's achievements
+                <br>• The STEM strand
+                <br>• Subjects taken in Grade 11 and Grade 12
+                <br>• Information about JRCA
+                <br>• How to get to the school
+                -->
+                <br><br>
+                Ask me anything related to JRCA and Luke's Senior High School journey!
+            </p>
+            </div>
+        </article>
+    </main>
+    <!-- ===================== Input ===================== -->
+    <footer class="input-area">
+        <div class="input-wrapper" role="group" aria-label="Message input">
+       
+        <label for="chat-input" class="sr-only"> </label>
+        <input
+            id="chat-input"
+            class="input-field"
+            type="text"
+            placeholder="Message Kaizen..."
+            autocomplete="off"
+        />
+
+        <div class="input-actions">
+            <button class="send-btn" type="button" aria-label="Send message" onclick="sendMessage()">
+            <span>Send</span>
+            <span class="material-symbols-outlined" aria-hidden="true" style="font-size:1.125rem">send</span>
+            </button>
+        </div>
+        </div>
+        <p class="disclaimer">Kaizen AI can make mistakes. Check important info.</p>
+    </footer>
+    
+    <!--SCRIPTING-->
+    <script src="script.js"></script>
+    </body>
+</html>

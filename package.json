@@ -1,0 +1,25 @@
+{
+  "name": "kaizen_chatbot",
+  "version": "1.0.0",
+  "description": "Senior High School chatbot about Jesus Reigns Christian Academy",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "chatbot",
+    "gemini",
+    "jrcc",
+    "shs"
+  ],
+  "author": "Luke Joseph Renacido",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^1.46.0",
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1"
+  }
+}

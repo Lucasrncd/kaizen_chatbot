@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5865F2", // Discord Blurple
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#1E1F22", // Deep Black
+                        "surface-dark": "#313338",    // Dark Gray
+                        "chat-bubble": "#2B2D31",     // Kaizen bubble
+                        "input-bg": "#383A40",        // Input area
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-input {
+            backdrop-filter: blur(8px);
+            background-color: rgba(56, 58, 64, 0.8);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2B2D31;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #383A40;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between px-6 py-3 bg-surface-dark/95 backdrop-blur-md border-b border-white/5 shadow-lg">
+<div class="flex items-center gap-3">
+<div class="size-9 bg-primary flex items-center justify-center rounded-lg shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">auto_awesome</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h2 class="text-slate-100 text-lg font-bold leading-none tracking-tight font-display">Kaizen</h2>
+<div class="size-2.5 bg-green-500 rounded-full border-2 border-surface-dark"></div>
+</div>
+<span class="text-xs text-slate-400 font-medium">Always online</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-white/10 text-slate-400 transition-colors" title="Clear Chat">
+<span class="material-symbols-outlined">delete_sweep</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-white/10 text-slate-400 transition-colors" title="Settings">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="ml-2 size-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar with a placeholder pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJAS53Cf__ltKNdN0f3njRhaLiKyQL6xLLuYnx3aZyfmNyoN6yOKxyI_0I-yi8202PwFS4f4GXxBGkQxsSukGDrxNsqoDKg2Xzx0bzulPeprIFLu5fUKTCvT5SzhpSh950OVWAU7xjzQ_d3OBg9ixeQZ86Nx2bko48JpXVJcPuKUI_hjbI_kbv7TUSCnfaWCHR3zgvFE8dahVSI326R_wALi-tE8gNbV1tJGkxDywMPuBwOsUt2862tlyVrVzwGeqaXeJq64FXPqgY"/>
+</div>
+</div>
+</header>
+<!-- Main Chat Window -->
+<main class="flex-1 flex flex-col w-full max-w-4xl mx-auto px-4 py-8 overflow-y-auto space-y-6 pb-4">
+<!-- Bot Message -->
+<div class="flex items-start gap-4 max-w-[85%] group">
+<div class="size-10 rounded-xl bg-chat-bubble flex-shrink-0 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-baseline gap-2">
+<span class="text-sm font-bold text-slate-100">Kaizen</span>
+<span class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">AI Assistant</span>
+</div>
+<div class="bg-chat-bubble text-slate-200 px-5 py-3.5 rounded-xl rounded-tl-none shadow-sm text-[15px] leading-relaxed border border-white/5">
+                    Hello! I'm Kaizen, your productivity-focused AI. How can I help you improve your workflow or analyze your projects today?
+                </div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start gap-4 max-w-[85%] ml-auto flex-row-reverse group">
+<div class="size-10 rounded-xl bg-primary flex-shrink-0 flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">person</span>
+</div>
+<div class="flex flex-col gap-1.5 items-end">
+<div class="flex items-baseline gap-2">
+<span class="text-sm font-bold text-slate-100">You</span>
+<span class="text-[10px] text-slate-500 font-medium">10:42 AM</span>
+</div>
+<div class="border border-white/10 text-slate-200 px-5 py-3.5 rounded-xl rounded-tr-none shadow-sm text-[15px] leading-relaxed bg-transparent">
+                    Can you help me analyze my project timeline? I'm worried about the Q3 deadlines for the redesign phase.
+                </div>
+</div>
+</div>
+<!-- Bot Message -->
+<div class="flex items-start gap-4 max-w-[85%] group">
+<div class="size-10 rounded-xl bg-chat-bubble flex-shrink-0 flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="flex items-baseline gap-2">
+<span class="text-sm font-bold text-slate-100">Kaizen</span>
+<span class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">AI Assistant</span>
+</div>
+<div class="bg-chat-bubble text-slate-200 px-5 py-3.5 rounded-xl rounded-tl-none shadow-sm text-[15px] leading-relaxed border border-white/5">
+                    Of course. I can help identify bottlenecks and suggest optimizations for your Q3 schedule. Please share the details of your timeline or upload your roadmap file (CSV, JSON, or PDF) to get started.
+                </div>
+</div>
+</div>
+<!-- User Message -->
+<div class="flex items-start gap-4 max-w-[85%] ml-auto flex-row-reverse group">
+<div class="size-10 rounded-xl bg-primary flex-shrink-0 flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white">person</span>
+</div>
+<div class="flex flex-col gap-1.5 items-end">
+<div class="flex items-baseline gap-2">
+<span class="text-sm font-bold text-slate-100">You</span>
+<span class="text-[10px] text-slate-500 font-medium">10:44 AM</span>
+</div>
+<div class="border border-white/10 text-slate-200 px-5 py-3.5 rounded-xl rounded-tr-none shadow-sm text-[15px] leading-relaxed bg-transparent">
+                    I'll upload the Excel file now. One moment.
+                </div>
+</div>
+</div>
+</main>
+<!-- Floating Input Area -->
+<div class="w-full max-w-4xl mx-auto px-4 pb-4">
+<div class="glass-input rounded-2xl p-2 shadow-2xl border border-white/5 flex items-center gap-2">
+<button class="size-10 flex items-center justify-center text-slate-400 hover:text-slate-100 transition-colors rounded-xl hover:bg-white/5">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-slate-100 placeholder:text-slate-500 text-[15px] px-2 py-3" placeholder="Message Kaizen..." type="text"/>
+<div class="flex items-center gap-1 pr-1">
+<button class="size-10 flex items-center justify-center text-slate-400 hover:text-slate-100 transition-colors rounded-xl hover:bg-white/5">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</button>
+<button class="bg-primary hover:bg-primary/90 text-white flex items-center justify-center px-5 h-10 rounded-xl transition-all font-bold text-sm gap-2 shadow-lg shadow-primary/20">
+<span>Send</span>
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+</div>
+<p class="text-center text-[11px] text-slate-600 font-medium tracking-wide mt-2">
+            KAIZEN AI CAN MAKE MISTAKES. CHECK IMPORTANT INFO.
+        </p>
+</div>
+</body></html>
