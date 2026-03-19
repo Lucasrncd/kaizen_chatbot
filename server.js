@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(express.static("public"));
 
 const PORT = process.env.PORT || 5500;
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
 
 // Load SHS knowledge base
 const shsData = fs.readFileSync("./shs_data.txt", "utf8");
@@ -75,8 +78,4 @@ ANSWER:
         console.error("ERROR:", error);
         res.status(500).json({ reply: "Server error occurred." });
     }
-});
-
-app.listen(PORT, () => {
-    console.log("Server running on port " + PORT);
 });
